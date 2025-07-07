@@ -1,0 +1,86 @@
+Tasarımcıya/Tasarlayıcı AI’ya Prompt:
+
+Bir web sitesi tasarla. Amaç:
+
+Okuldayken öğrencilerin çeşitli oyun ve uygulamaları gizli şekilde indirebildiği, fakat dışarıdan bakıldığında sade ve profesyonel bir “proje arşivi” gibi görünen modern, animasyonlu, koyu temalı bir web sitesi.
+
+---
+
+GENEL BİLGİLER:
+- Site Adı: Semih Topak Portalı
+- Koyu temalı (dark mode)
+- Mobil ve tablet uyumlu (responsive)
+- Modern, animasyonlu, materyal stilinde tasarım
+- Flat UI + geçişli degrade arka plan
+- CSS animasyonları ve hover efektleri
+- Açılışta animasyonlu “yükleniyor” ekranı
+
+---
+
+SAYFA YAPISI:
+
+1. Ana Sayfa:
+- Karşılama başlığı: “Semih Topak Portalına Hoş Geldin”
+- Grid görünümde içerik kartları
+- Her kart: Proje adı, açıklama, ikon/görsel, "İndir" butonu
+- Kartlar hover olunca büyür ve glow verir
+- Arama kutusu + kategori filtresi
+
+2. Uygulamalar Sayfası:
+- Gerçek araç gibi maskelenmiş oyunlar (örnek: “PDF Görüntüleyici”)
+- Açıklamalar: “Verimliliğinizi artırır”, “Offline çalışır” vb.
+
+3. Yerel Araçlar Sayfası:
+- Offline çalışan oyunlar
+- Sade görünüm, sahte araç isimleri
+- Kategori adı: “Yardımcı Ekler”
+
+---
+
+GİZLİ ADMIN PANEL:
+
+- Menüde görünmez
+- Açılma yöntemi: Ctrl + Alt + S kombinasyonu
+- Ekrana animasyonlu şifre kutusu gelir
+- Şifre doğruysa admin panel açılır
+
+Admin panel özellikleri:
+- Yeni içerik ekle (isim, açıklama, görsel URL, link, offline seçeneği)
+- İçerik listele/düzenle/sil
+- Sahte sayaç: “Toplam Proje: 42”
+- localStorage ya da Firebase tabanlı olabilir
+
+---
+
+TASARIM STİLİ:
+
+- Arka Plan: Partikül efekti ya da degrade geçiş
+- Font: Poppins, Inter, JetBrains Mono
+- Renk Paleti:
+  - Arka plan: #111111
+  - Kartlar: #1F1F1F
+  - Yazılar: #E0E0E0, #B0BEC5
+  - Vurgular: #00E676, #42A5F5
+- Tema değiştirme (Dark/Light)
+
+---
+
+GİZLİLİK KURALLARI:
+
+- “Oyun”, “Game”, “APK”, “Download” gibi kelimeler kesinlikle kullanılmasın
+- Sayfa başlığı: “Topak Arşiv Paneli”
+- “İndir” butonları isteğe bağlı olarak “Uygulamayı Aç”, “Projeyi Al” olarak değiştirilebilir
+- Gerçek içerikler sahte açıklamalarla maskelensin
+
+---
+
+BONUS ÖZELLİKLER:
+
+- Favorilere ekle (localStorage)
+- Gelişmiş filtre: Offline/Online, boyut sıralama
+- Dinamik geçiş animasyonları (GSAP veya Framer Motion destekli)
+- Admin panelinden JSON yedeği dışa aktar
+
+---
+
+Kod temeli: HTML, TailwindCSS, JavaScript (isteğe bağlı Firebase)
