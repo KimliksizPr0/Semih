@@ -12,12 +12,14 @@ export function Navbar() {
     { path: "/", label: "Ana Sayfa" },
     { path: "/applications", label: "Uygulamalar" },
     { path: "/0yunlar", label: "0yunlar" },
+    { path: "/chat", label: "Sohbet" },
   ];
 
   const mobileNavItems = [
     { path: "/", label: "Ana Sayfa" },
     { path: "/applications", label: "Uygulamalar" },
     { path: "/0yunlar", label: "0yunlar" },
+    { path: "/chat", label: "Sohbet" },
     { path: "/admin-login", label: "Admin" },
   ];
 
@@ -30,22 +32,21 @@ export function Navbar() {
           <div className="flex items-center">
             <div className="text-xl font-bold text-accent-green flex items-center space-x-2">
               <Archive className="h-5 w-5" />
-              <span>Semih Topak</span>
+              <span data-semih-topak-hover="true">Semih Topak</span>
             </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <span
-                  className={`cursor-pointer transition-colors duration-300 ${
-                    isActive(item.path)
-                      ? "text-accent-green"
-                      : "text-dark-muted hover:text-accent-green"
-                  }`}
-                >
-                  {item.label}
-                </span>
+              <Link key={item.path} href={item.path}
+                className={`cursor-pointer transition-colors duration-300 ${
+                  isActive(item.path)
+                    ? "text-accent-green"
+                    : "text-dark-muted hover:text-accent-green hover:bg-accent-green/10"
+                }`}
+                data-navbar-item-hover="true"
+              >
+                {item.label}
               </Link>
             ))}
 

@@ -49,7 +49,7 @@ export default function Oyunlar() {
         className="space-y-8 relative z-10"
       >
         <div className="text-center relative z-20">
-          <h1 className="text-4xl font-bold text-white mb-4 relative z-20" style={{ position: 'relative', zIndex: 1000 }}>0yunlar</h1>
+          <h1 className="text-4xl font-bold text-white mb-4 relative z-20 hover-effect-target" style={{ position: 'relative', zIndex: 1000 }}>0yunlar</h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto relative z-20" style={{ position: 'relative', zIndex: 1000 }}>
             Eğlenceli 0yunlar ve interaktif uygulamalar koleksiyonu
           </p>

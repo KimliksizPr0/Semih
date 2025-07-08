@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertProjectSchema } from "@shared/schema";
 import { z } from "zod";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all projects
@@ -78,6 +79,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ message: "Project deleted successfully" });
     } catch (error) {
       res.status(500).json({ message: "Failed to delete project" });
+    }
+  });
+
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const { message } = req.body;
+      if (!message) {
+        return res.status(400).json({ message: "Message is required" });
+      }
+
+        const genAI = new GoogleGenerativeAI('AIzaSyBr1ygZbTpN06SCgRRpzGOv9eANq5SRfqE');
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+      const result = await model.generateContent(message);
+      const response = await result.response;
+      const text = response.text();
+
+      res.json({ reply: text });
+    } catch (error) {
+      console.error("Error in /api/chat:", error);
+      res.status(500).json({ message: "Failed to get response from Gemini" });
     }
   });
 

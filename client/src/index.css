@@ -30,7 +30,9 @@
   --dark-text: hsl(0, 0%, 87.8%);
   --dark-muted: hsl(0, 0%, 69.4%);
   --accent-green: hsl(142, 100%, 45%);
+  --accent-green-rgb: 0, 230, 83;
   --accent-blue: hsl(207, 90%, 61%);
+  --accent-blue-rgb: 0, 153, 255;
 }
 
 .dark {
@@ -141,6 +143,77 @@
   .accent-blue {
     color: var(--accent-blue);
   }
+
+  .cursor-follower {
+    position: fixed;
+    width: 24px; /* Bir tık büyütüldü */
+    height: 24px; /* Bir tık büyütüldü */
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Beyaz kenarlık */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .cursor-follower.expanded-cursor {
+    width: 90px; /* Bir tık büyütüldü */
+    height: 90px; /* Bir tık büyütüldü */
+    background-color: rgba(255, 255, 255, 0.9); /* Beyaz dolgu */
+    border-color: transparent;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5); /* Beyaz parlama */
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--dark-card);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+  }
+
+  /* Typing Indicator Dots */
+  .dot-flashing {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--dark-muted);
+    color: var(--dark-muted);
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: 0s;
+  }
+
+  .dot-flashing-2 {
+    animation-delay: 0.3s;
+  }
+
+  .dot-flashing-3 {
+    animation-delay: 0.6s;
+  }
+
+@keyframes dotFlashing {
+  0% {
+    background-color: var(--dark-muted);
+  }
+  50%,
+  100% {
+    background-color: var(--accent-green);
+  }
+}
 }
 
 @keyframes spin {

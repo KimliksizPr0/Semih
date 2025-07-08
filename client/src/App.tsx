@@ -13,6 +13,8 @@ import Oyunlar from "@/pages/0yunlar";
 import Admin from "@/pages/admin";
 import AdminLogin from "@/pages/admin-login";
 import NotFound from "@/pages/not-found";
+import Chat from "@/pages/chat";
+import MouseTrail from "@/components/layout/mouse-trail";
 
 function Router() {
   return (
@@ -22,6 +24,7 @@ function Router() {
       <Route path="/0yunlar" component={Oyunlar} />
       <Route path="/admin-login" component={AdminLogin} />
       <Route path="/admin" component={Admin} />
+      <Route path="/chat" component={Chat} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -37,7 +40,10 @@ function App() {
           <LoadingScreen />
           <ParticleBackground />
           <Navbar />
-          <Router />
+          <MouseTrail />
+          <main className="relative z-20">
+            <Router />
+          </main>
           <Toaster />
         </div>
       </TooltipProvider>

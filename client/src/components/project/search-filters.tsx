@@ -22,6 +22,7 @@ export function SearchFilters({ filters, onFiltersChange }: SearchFiltersProps) 
                 value={filters.search}
                 onChange={(e) => onFiltersChange({ ...filters, search: e.target.value })}
                 className="pl-10 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:ring-accent-green focus:border-accent-green"
+                data-hover-target="true" data-input-hover="true"
               />
             </div>
           </div>

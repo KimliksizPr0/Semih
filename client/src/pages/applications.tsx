@@ -36,7 +36,7 @@ export default function Applications() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-dark-text">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-dark-text hover-effect-target">
             Uygulamalar
           </h1>
           <p className="text-lg text-dark-muted max-w-2xl mx-auto">
