@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,17 +13,24 @@ import Oyunlar from "@/pages/0yunlar";
 import Admin from "@/pages/admin";
 import AdminLogin from "@/pages/admin-login";
 import NotFound from "@/pages/not-found";
+import Chat from "@/pages/chat";
+import MouseTrail from "@/components/layout/mouse-trail";
+import { AnimatePresence } from 'framer-motion';
 
 function Router() {
+  const [location] = useLocation();
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/applications" component={Applications} />
-      <Route path="/0yunlar" component={Oyunlar} />
-      <Route path="/admin-login" component={AdminLogin} />
-      <Route path="/admin" component={Admin} />
-      <Route component={NotFound} />
-    </Switch>
+    <AnimatePresence mode="wait">
+      <Switch key={location}>
+        <Route path="/" component={Home} />
+        <Route path="/applications" component={Applications} />
+        <Route path="/0yunlar" component={Oyunlar} />
+        <Route path="/admin-login" component={AdminLogin} />
+        <Route path="/admin" component={Admin} />
+        <Route path="/chat" component={Chat} />
+        <Route component={NotFound} />
+      </Switch>
+    </AnimatePresence>
   );
 }
 
@@ -37,7 +44,10 @@ function App() {
           <LoadingScreen />
           <ParticleBackground />
           <Navbar />
-          <Router />
+          <MouseTrail />
+          <main className="relative z-20">
+            <Router />
+          </main>
           <Toaster />
         </div>
       </TooltipProvider>

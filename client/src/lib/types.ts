@@ -6,6 +6,7 @@ export interface Project {
   icon: string;
   link: string;
   offline: boolean;
+  imageUrl?: string; // Arka plan resmi için
   patchLink?: string;
   createdAt?: Date;
 }
@@ -17,6 +18,7 @@ export interface InsertProject {
   icon: string;
   link: string;
   offline: boolean;
+  imageUrl?: string;
   patchLink?: string;
 }
 

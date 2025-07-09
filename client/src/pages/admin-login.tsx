@@ -6,6 +6,25 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Lock, User } from "lucide-react";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+};
+
+const pageTransition = {
+  type: "tween",
+  ease: "anticipate",
+  duration: 0.5,
+};
 
 export default function AdminLogin() {
   const [, setLocation] = useLocation();
@@ -46,68 +65,76 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-dark-bg flex items-center justify-center p-4 relative z-50">
-      <Card className="w-full max-w-md bg-dark-card border-gray-700 relative z-50">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold text-white flex items-center justify-center gap-2">
-            <Lock className="h-6 w-6 text-accent-green" />
-            Admin Girişi
-          </CardTitle>
-          <CardDescription className="text-gray-400">
-            Yönetici paneline erişmek için giriş yapın
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin} className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="username" className="text-white">
-                Kullanıcı Adı
-              </Label>
-              <div className="relative">
-                <User className="absolute left-3 top-4 h-4 w-4 text-gray-500" />
-                <Input
-                  id="username"
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="pl-10 pr-4 py-3 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:border-accent-green h-12"
-                  placeholder="Kullanıcı adını girin"
-                  required
-                />
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
+      <div className="min-h-screen bg-dark-bg flex items-center justify-center p-4 relative z-50">
+        <Card className="w-full max-w-md bg-dark-card border-gray-700 relative z-50">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-bold text-white flex items-center justify-center gap-2">
+              <Lock className="h-6 w-6 text-accent-green" />
+              Admin Girişi
+            </CardTitle>
+            <CardDescription className="text-gray-400">
+              Yönetici paneline erişmek için giriş yapın
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="username" className="text-white">
+                  Kullanıcı Adı
+                </Label>
+                <div className="relative">
+                  <User className="absolute left-3 top-4 h-4 w-4 text-gray-500" />
+                  <Input
+                    id="username"
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="pl-10 pr-4 py-3 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:border-accent-green h-12"
+                    placeholder="Kullanıcı adını girin"
+                    required
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="password" className="text-white">
-                Şifre
-              </Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-4 h-4 w-4 text-gray-500" />
-                <Input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 pr-4 py-3 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:border-accent-green h-12"
-                  placeholder="Şifrenizi girin"
-                  required
-                />
+              
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-white">
+                  Şifre
+                </Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-4 h-4 w-4 text-gray-500" />
+                  <Input
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="pl-10 pr-4 py-3 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:border-accent-green h-12"
+                    placeholder="Şifrenizi girin"
+                    required
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="pt-6 relative z-50">
-              <button
-                type="submit"
-                className="w-full h-12 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-2xl hover:shadow-green-500/25 border-0 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 relative z-50"
-                disabled={isLoading}
-                style={{ position: 'relative', zIndex: 9999 }}
-              >
-                {isLoading ? "Giriş yapılıyor..." : "Giriş Yap"}
-              </button>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
+              
+              <div className="pt-6 relative z-50">
+                <button
+                  type="submit"
+                  className="w-full h-12 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-2xl hover:shadow-green-500/25 border-0 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 relative z-50"
+                  disabled={isLoading}
+                  style={{ position: 'relative', zIndex: 9999 }}
+                >
+                  {isLoading ? "Giriş yapılıyor..." : "Giriş Yap"}
+                </button>
+              </div>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    </motion.div>
   );
 }
