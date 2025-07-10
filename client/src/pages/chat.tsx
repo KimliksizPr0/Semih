@@ -28,7 +28,26 @@ const Chat: React.FC = () => {
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState<{ role: 'user' | 'bot'; content: string }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [chatId, setChatId] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const savedChatId = localStorage.getItem('chatId');
+    if (savedChatId) {
+      setChatId(parseInt(savedChatId, 10));
+      const savedChatHistory = localStorage.getItem(`chatHistory_${savedChatId}`);
+      if (savedChatHistory) {
+        setChatHistory(JSON.parse(savedChatHistory));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (chatId) {
+      localStorage.setItem('chatId', chatId.toString());
+      localStorage.setItem(`chatHistory_${chatId}`, JSON.stringify(chatHistory));
+    }
+  }, [chatId, chatHistory]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -52,7 +71,7 @@ const Chat: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message, chatId }),
       });
 
       if (!response.ok) {
@@ -61,6 +80,9 @@ const Chat: React.FC = () => {
 
       const data = await response.json();
       setChatHistory((prevHistory) => [...prevHistory, { role: 'bot', content: data.reply }]);
+      if (data.chatId) {
+        setChatId(data.chatId);
+      }
     } catch (error) {
       console.error(error);
       setChatHistory((prevHistory) => [...prevHistory, { role: 'bot', content: 'An error occurred. Please try again.' }]);
@@ -149,6 +171,17 @@ const Chat: React.FC = () => {
               disabled={isLoading}
             >
               <Send className="h-5 w-5" />
+            </Button>
+            <Button
+              onClick={() => {
+                setChatId(null);
+                setChatHistory([]);
+                localStorage.removeItem('chatId');
+                localStorage.removeItem(`chatHistory_${chatId}`);
+              }}
+              className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200"
+            >
+              New Chat
             </Button>
           </div>
         </div>

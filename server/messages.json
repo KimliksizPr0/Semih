@@ -1,0 +1,240 @@
+[
+  {
+    "id": 1,
+    "chatId": 6,
+    "role": "user",
+    "content": "merhaba",
+    "createdAt": "2025-07-10T08:30:56.051Z"
+  },
+  {
+    "id": 2,
+    "chatId": 6,
+    "role": "model",
+    "content": "Merhaba!  Nasıl yardımcı olabilirim?\n",
+    "createdAt": "2025-07-10T08:30:57.844Z"
+  },
+  {
+    "id": 3,
+    "chatId": 6,
+    "role": "user",
+    "content": "ITnedır?",
+    "createdAt": "2025-07-10T08:31:20.862Z"
+  },
+  {
+    "id": 4,
+    "chatId": 6,
+    "role": "model",
+    "content": "\"IT\" kısaltması, **Bilgi Teknolojileri** anlamına gelir (İngilizce: Information Technology).  Bilgisayar donanımı, yazılımı, ağlar, veri depolama ve diğer teknolojileri kullanarak bilgiyi oluşturma, saklama, koruma, işleme ve yaymayı içeren geniş bir alandır.  IT, hemen her sektörde işletmelerin ve bireylerin verimliliğini ve üretkenliğini artırmak için kullanılır.\n",
+    "createdAt": "2025-07-10T08:31:24.903Z"
+  },
+  {
+    "id": 5,
+    "chatId": 6,
+    "role": "user",
+    "content": "daha kısa",
+    "createdAt": "2025-07-10T08:31:31.707Z"
+  },
+  {
+    "id": 6,
+    "chatId": 6,
+    "role": "model",
+    "content": "IT, Bilgi Teknolojileri demektir.\n",
+    "createdAt": "2025-07-10T08:31:33.142Z"
+  },
+  {
+    "id": 7,
+    "chatId": 6,
+    "role": "user",
+    "content": "sen nesin?",
+    "createdAt": "2025-07-10T08:37:03.641Z"
+  },
+  {
+    "id": 8,
+    "chatId": 6,
+    "role": "model",
+    "content": "Ben Google tarafından eğitilmiş büyük bir dil modeliydim.\n",
+    "createdAt": "2025-07-10T08:37:05.271Z"
+  },
+  {
+    "id": 9,
+    "chatId": 6,
+    "role": "user",
+    "content": "ismin ne",
+    "createdAt": "2025-07-10T08:37:13.391Z"
+  },
+  {
+    "id": 10,
+    "chatId": 6,
+    "role": "model",
+    "content": "Benim bir adım yok.\n",
+    "createdAt": "2025-07-10T08:37:21.860Z"
+  },
+  {
+    "id": 11,
+    "chatId": 6,
+    "role": "user",
+    "content": "gemini misin sen?",
+    "createdAt": "2025-07-10T08:37:32.631Z"
+  },
+  {
+    "id": 12,
+    "chatId": 6,
+    "role": "model",
+    "content": "Ben Google tarafından eğitildim ve bir büyük dil modeliydim.  Gemini, Google tarafından geliştirilen ayrı bir büyük dil modelidir.  Ben Gemini değilim.\n",
+    "createdAt": "2025-07-10T08:37:34.256Z"
+  },
+  {
+    "id": 13,
+    "chatId": 6,
+    "role": "user",
+    "content": "sahibin kim?",
+    "createdAt": "2025-07-10T08:41:36.763Z"
+  },
+  {
+    "id": 14,
+    "chatId": 6,
+    "role": "model",
+    "content": "Sahibim Google.\n",
+    "createdAt": "2025-07-10T08:41:38.527Z"
+  },
+  {
+    "id": 15,
+    "chatId": 6,
+    "role": "user",
+    "content": "kimin tarafından geliştirildin?",
+    "createdAt": "2025-07-10T08:41:54.381Z"
+  },
+  {
+    "id": 16,
+    "chatId": 6,
+    "role": "model",
+    "content": "Google tarafından geliştirildim.\n",
+    "createdAt": "2025-07-10T08:42:02.508Z"
+  },
+  {
+    "id": 17,
+    "chatId": 7,
+    "role": "user",
+    "content": "sahibin kim?",
+    "createdAt": "2025-07-10T08:42:12.914Z"
+  },
+  {
+    "id": 18,
+    "chatId": 7,
+    "role": "model",
+    "content": "Ben Google tarafından eğitilmiş büyük bir dil modeliydim.",
+    "createdAt": "2025-07-10T08:42:16.659Z"
+  },
+  {
+    "id": 19,
+    "chatId": 8,
+    "role": "user",
+    "content": "Kimsin sen?",
+    "createdAt": "2025-07-10T08:46:41.017Z"
+  },
+  {
+    "id": 20,
+    "chatId": 8,
+    "role": "model",
+    "content": "Merhaba! Ben AI Design Studio Asistanı'yım.  Semih Topak tarafından geliştirildim ve AI Design Studio web sitesinde kullanıcılara yardımcı olmak için buradayım.  Semih Topak'ın projelerini ve çalışmalarını keşfetmenizde size yardımcı olabilirim.  Sitemizde yer alan uygulamalar, oyunlar ve araçlar hakkında sorularınızı yanıtlamaktan ve size daha fazla bilgi sağlamaktan mutluluk duyarım.  Herhangi bir sorunuz varsa lütfen bana bildirin.\n",
+    "createdAt": "2025-07-10T08:46:43.035Z"
+  },
+  {
+    "id": 21,
+    "chatId": 9,
+    "role": "user",
+    "content": "kimsin sen?",
+    "createdAt": "2025-07-10T08:48:01.882Z"
+  },
+  {
+    "id": 22,
+    "chatId": 9,
+    "role": "model",
+    "content": "Merhaba! Ben AI Design Studio Asistanı. Semih Topak tarafından geliştirildim ve AI Design Studio web sitesinde sana yardımcı olmak için buradayım.  Bu site, Semih Topak'ın çeşitli projelerini sergilediği bir portfolyo sitesidir.  Herhangi bir sorunda bana ulaşabilirsin, projeler hakkında bilgi alabilir veya siteyle ilgili genel sorularını sorabilirsin.  Yardımcı olmaktan mutluluk duyarım!\n",
+    "createdAt": "2025-07-10T08:48:05.078Z"
+  },
+  {
+    "id": 23,
+    "chatId": 10,
+    "role": "user",
+    "content": "kimsin sen?",
+    "createdAt": "2025-07-10T08:48:26.005Z"
+  },
+  {
+    "id": 24,
+    "chatId": 10,
+    "role": "model",
+    "content": "Merhaba! Ben Jarvis, Semih Topak tarafından geliştirilmiş bir yapay zeka asistanıyım.  Semih Topak'ın web sitesinde bulunuyorum ve bu siteyi ziyaret eden kullanıcılara yardımcı olmak için buradayım.  Site, Semih Topak'ın çeşitli projelerini sergilediği bir portfolyo sitesidir.  Herhangi bir sorunuz veya ihtiyacınız olursa bana sormaktan çekinmeyin.\n",
+    "createdAt": "2025-07-10T08:48:36.135Z"
+  },
+  {
+    "id": 25,
+    "chatId": 11,
+    "role": "user",
+    "content": "kimsin sen? bu sitede neler yapabilirim?",
+    "createdAt": "2025-07-10T08:51:24.560Z"
+  },
+  {
+    "id": 26,
+    "chatId": 11,
+    "role": "model",
+    "content": "Merhaba! Ben AI Design Studio Asistanı, Semih Topak'ın AI Design Studio web sitesindeki sanal yardımcınızım.  Bu sitede, Semih Topak'ın geliştirdiği çeşitli projeleri inceleyebilirsiniz.  Bunlar arasında uygulamalar, oyunlar ve farklı araçlar bulunuyor.\n\nBu sitede yapabilecekleriniz:\n\n* **Projeleri keşfetmek:**  Uygulamalar, oyunlar ve araçlar gibi farklı kategorilerdeki projeleri inceleyebilirsiniz.  Her projenin ayrıntılı bir açıklaması ve bazen indirme bağlantıları bulunmaktadır.\n\n* **Projeleri indirmek/kullanmak:** Bazı projelerin indirme bağlantıları veya kullanım linkleri mevcuttur.  Projenin sayfasına giderek,  \"link\" veya \"patchLink\" gibi bağlantıları bulabilirsiniz. Bu bağlantıları kullanarak ilgili projeye erişebilirsiniz.  Bazı projeler ise \"offline\" olarak işaretlenmiştir; bu, şu anda erişilebilir olmadıkları veya sadece tanıtım amaçlı oldukları anlamına gelir.\n\n* **Benden yardım almak:**  Projeler hakkında sorular sorabilir, belirli bir kategorideki projeleri listelememi isteyebilir veya belirli bir projenin ne işe yaradığını sorabilirsiniz.  Size elimden gelenin en iyisini yaparak yardımcı olacağım!\n\nSiteyi keşfetmeye başlamak için ne tür projelerle ilgileniyorsunuz?  Belki size bazı önerilerde bulunabilirim.\n",
+    "createdAt": "2025-07-10T08:51:33.137Z"
+  },
+  {
+    "id": 27,
+    "chatId": 11,
+    "role": "user",
+    "content": "sitedekki en iyi oyunları söylermisin?",
+    "createdAt": "2025-07-10T08:52:29.573Z"
+  },
+  {
+    "id": 28,
+    "chatId": 11,
+    "role": "model",
+    "content": "Maalesef, \"en iyi\" öznel bir kavram olduğu için, sitedeki en iyi oyunları objektif olarak belirlemem mümkün değil.  Her oyunun farklı güçlü ve zayıf yönleri vardır ve hangi oyunun \"en iyi\" olduğu tamamen kişisel tercihlere bağlıdır.\n\nAncak, size sitedeki oyunları daha iyi değerlendirmeniz için bazı bilgiler verebilirim:  Hangi tür oyunlardan hoşlandığınızı (örneğin, strateji, macera, bulmaca, vb.) biliyorsam, size daha özel önerilerde bulunabilirim.  Ayrıca, her bir oyunun kısa bir tanıtımını yaparak, size karar vermenizde yardımcı olabilirim.\n\nLütfen bana hangi tür oyunlardan hoşlandığınızı veya hangi özelliklere sahip oyunlar aradığınızı söyleyin, böylece size daha uygun önerilerde bulunabilirim.\n",
+    "createdAt": "2025-07-10T08:52:43.660Z"
+  },
+  {
+    "id": 29,
+    "chatId": 11,
+    "role": "user",
+    "content": "2d oyunları listele sitedeki",
+    "createdAt": "2025-07-10T08:53:08.989Z"
+  },
+  {
+    "id": 30,
+    "chatId": 11,
+    "role": "model",
+    "content": "Üzgünüm, ancak hangi oyunların 2D olup olmadığı bilgisine erişimim yok.  Her projenin ayrıntılarını içeren bir veritabanına bağlı değilim.  Siteyi ziyaret ederek ve projeleri tek tek inceleyerek 2D oyunları kendiniz bulmanız gerekecektir.  Projelerin görsellerini inceleyerek veya açıklamalarını okuyarak hangilerinin 2D olduğunu belirleyebilirsiniz.\n",
+    "createdAt": "2025-07-10T08:56:55.012Z"
+  },
+  {
+    "id": 31,
+    "chatId": 12,
+    "role": "user",
+    "content": "Kimsin sen?",
+    "createdAt": "2025-07-10T08:58:39.103Z"
+  },
+  {
+    "id": 32,
+    "chatId": 13,
+    "role": "user",
+    "content": "merhaba kimsin sen ?seni kim geliştrdi?",
+    "createdAt": "2025-07-10T09:02:08.459Z"
+  },
+  {
+    "id": 33,
+    "chatId": 14,
+    "role": "user",
+    "content": "kimsin ? nesin sen? kim geliştirdi seni?",
+    "createdAt": "2025-07-10T09:12:29.497Z"
+  },
+  {
+    "id": 34,
+    "chatId": 15,
+    "role": "user",
+    "content": "kim yaptı seni?",
+    "createdAt": "2025-07-10T09:14:22.892Z"
+  }
+]

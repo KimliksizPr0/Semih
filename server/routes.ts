@@ -46,7 +46,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Update project
+  // Proje Güncelle 
   app.put("/api/projects/:id", async (req, res) => {
     try {
       const id = parseInt(req.params.id);
@@ -84,19 +84,58 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post("/api/chat", async (req, res) => {
     try {
-      const { message } = req.body;
+      const { message, chatId } = req.body;
       if (!message) {
         return res.status(400).json({ message: "Message is required" });
       }
 
-        const genAI = new GoogleGenerativeAI('AIzaSyBr1ygZbTpN06SCgRRpzGOv9eANq5SRfqE');
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      if (!process.env.GEMINI_API_KEY) {
+        return res.status(500).json({ message: "Gemini API key not configured" });
+      }
 
-      const result = await model.generateContent(message);
+      let chat;
+      if (chatId) {
+        chat = await storage.getChat(chatId);
+      } else {
+        chat = await storage.createChat();
+      }
+
+      if (!chat) {
+        return res.status(404).json({ message: "Chat not found" });
+      }
+
+      await storage.addMessage({ chatId: chat.id, role: "user", content: message });
+
+      const history = (await storage.getMessages(chat.id)).map(m => ({
+        role: m.role,
+        parts: [{ text: m.content }],
+      }));
+
+      const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+      const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash",
+        systemInstruction: `Sen bir yapay zeka asistanısın. İşte bilmen gerekenler:
+- Adın: Senin adın Jarvis.
+- Geliştiricin ve Sahibin: Seni Semih Topak geliştirdi ve bu sitenin sahibi de odur.
+- Bulunduğun Yer: Semih Topağın web sitesindesin.
+- Görevin: Bu siteyi ziyaret eden kullanıcılara yardımcı olmak, projeler hakkında bilgi vermek ve siteyi nasıl kullanacaklarını anlatmak.
+- Site Hakkında Bilgiler: Bu site, Semih Topak'ın kişisel portfolyo sitesidir. Sitede uygulamalar, oyunlar ve çeşitli araçlar gibi projeler sergilenmektedir. Kullanıcılar projeleri inceleyebilir ve bazılarını indirebilir veya kullanabilir.
+- Projelere Erişim: Bir projeyi indirmek veya kullanmak için, projenin üzerine tıklayarak detay sayfasına gitmeleri gerekir. Detay sayfasında projenin 'link' veya 'patchLink' gibi bağlantıları bulunur. Bu bağlantıları kullanarak projeye erişebilirler. Eğer bir proje 'offline' olarak işaretlenmişse, bu projenin internet bağlantısı olmadan da çalışabildiğini belirtebilirsin.
+- Yapabileceklerin: Kullanıcılara projeler hakkında sorular sorabileceklerini, belirli bir kategorideki projeleri listelemeni isteyebileceklerini veya bir projenin ne işe yaradığını sorabileceklerini söyleyebilirsin.
+- Konuşma Tarzın: Her zaman yardımsever, proaktif ve arkadaş canlısı bir dil kullan. Cevapların net, anlaşılır ve kullanıcıyı yönlendirici olsun.`,
+      });
+
+      const geminiChat = model.startChat({
+        history: history.slice(0, -1),
+      });
+
+      const result = await geminiChat.sendMessage(message);
       const response = await result.response;
       const text = response.text();
 
-      res.json({ reply: text });
+      await storage.addMessage({ chatId: chat.id, role: "model", content: text });
+
+      res.json({ reply: text, chatId: chat.id });
     } catch (error) {
       console.error("Error in /api/chat:", error);
       res.status(500).json({ message: "Failed to get response from Gemini" });
