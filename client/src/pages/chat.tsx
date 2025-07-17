@@ -117,7 +117,7 @@ const Chat: React.FC = () => {
                   chat.role === 'user' ? 'ml-auto' : 'mr-auto'
                 )}>
                   <div className={cn(
-                    "rounded-lg px-4 py-2 break-words border border-dark-muted/30 shadow-md transition-all duration-200 md:hover:shadow-glow-green data-hover-target",
+                    "rounded-lg px-4 py-2 break-words border border-dark-muted/30 shadow-md transition-all duration-200 md:hover:shadow-glow-white data-hover-target",
                     chat.role === 'user'
                       ? 'bg-accent-green text-white'
                       : 'bg-dark-muted/20 text-dark-text'
@@ -162,7 +162,7 @@ const Chat: React.FC = () => {
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
               placeholder="Type your message..."
-              className="flex-1 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:border-accent-green h-12 data-hover-target" data-input-hover="true"
+              className="flex-1 bg-gray-800 border-gray-600 text-white placeholder-gray-300 focus:border-accent-green h-12 data-hover-target focus:border-white" data-input-hover="true"
               disabled={isLoading}
             />
             <Button

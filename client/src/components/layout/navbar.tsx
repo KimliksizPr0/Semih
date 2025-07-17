@@ -9,44 +9,44 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { path: "/", label: "Ana Sayfa" },
-    { path: "/applications", label: "Uygulamalar" },
-    { path: "/0yunlar", label: "0yunlar" },
-    { path: "/chat", label: "Sohbet" },
+    { path: "/", label: "Home" },
+    { path: "/applications", label: "Applications" },
+    { path: "/apps", label: "Apps" },
+    { path: "/chat", label: "Chat" },
   ];
 
   const mobileNavItems = [
-    { path: "/", label: "Ana Sayfa" },
-    { path: "/applications", label: "Uygulamalar" },
-    { path: "/0yunlar", label: "0yunlar" },
-    { path: "/chat", label: "Sohbet" },
+    { path: "/", label: "Home" },
+    { path: "/applications", label: "Applications" },
+    { path: "/apps", label: "Apps" },
+    { path: "/chat", label: "Chat" },
     { path: "/admin-login", label: "Admin" },
   ];
 
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="bg-dark-card/80 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-40">
+    <nav className="bg-dark-card/80 backdrop-blur-sm border-b border-border sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="text-xl font-bold text-accent-green flex items-center space-x-2">
               <Archive className="h-5 w-5" />
-              <span data-semih-topak-hover="true">Semih Topak</span>
+              <span data-semih-topak-hover="true" className="select-none">&nbsp;Semih Topak&nbsp;</span>
             </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}
-                className={`cursor-pointer transition-colors duration-300 ${
+                className={`cursor-pointer transition-colors duration-300 font-sans antialiased ${
                   isActive(item.path)
                     ? "text-accent-green"
                     : "text-dark-muted hover:text-accent-green hover:bg-accent-green/10"
                 }`}
                 data-navbar-item-hover="true"
               >
-                {item.label}
+                &nbsp;{item.label}&nbsp;
               </Link>
             ))}
 

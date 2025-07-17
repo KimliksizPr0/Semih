@@ -9,7 +9,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { useTheme } from "@/hooks/use-theme";
 import Home from "@/pages/home";
 import Applications from "@/pages/applications";
-import Oyunlar from "@/pages/0yunlar";
+import Apps from "@/pages/apps";
 import Admin from "@/pages/admin";
 import AdminLogin from "@/pages/admin-login";
 import NotFound from "@/pages/not-found";
@@ -24,7 +24,7 @@ function Router() {
       <Switch key={location}>
         <Route path="/" component={Home} />
         <Route path="/applications" component={Applications} />
-        <Route path="/0yunlar" component={Oyunlar} />
+        <Route path="/apps" component={Apps} />
         <Route path="/admin-login" component={AdminLogin} />
         <Route path="/admin" component={Admin} />
         <Route path="/chat" component={Chat} />

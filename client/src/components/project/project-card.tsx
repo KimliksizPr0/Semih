@@ -26,7 +26,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative rounded-xl shadow-lg card-hover group data-hover-target overflow-hidden bg-cover bg-center"
+      className="relative rounded-xl shadow-lg card-hover group data-hover-target overflow-hidden bg-cover bg-center hover:shadow-glow-white"
       style={cardStyle}
       onClick={() => window.open(project.link, '_blank')}
     >
@@ -71,7 +71,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </Badge>
           <Button
             size="sm"
-            className="bg-accent-green text-white group-hover:bg-green-600 transition-colors"
+            className="bg-transparent text-white border border-transparent group-hover:bg-white/10 transition-colors"
             onClick={(e) => e.stopPropagation()} // Linke gitmeyi engelle
           >
             <ExternalLink className="h-3 w-3 mr-1" />

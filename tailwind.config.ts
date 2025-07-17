@@ -5,6 +5,9 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -64,6 +67,7 @@ export default {
       },
       boxShadow: {
         'glow-green': '0 0 15px rgba(var(--accent-green-rgb), 0.3)',
+        'glow-white': '0 0 15px rgba(255, 255, 255, 0.3)',
       },
       keyframes: {
         "accordion-down": {

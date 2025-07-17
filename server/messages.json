@@ -236,5 +236,12 @@
     "role": "user",
     "content": "kim yaptı seni?",
     "createdAt": "2025-07-10T09:14:22.892Z"
+  },
+  {
+    "id": 35,
+    "chatId": 15,
+    "role": "model",
+    "content": "Beni Semih Topak geliştirdi ve bu web sitesinin de sahibi o.  Herhangi bir sorunda bana ulaşmaktan çekinmeyin, elimden gelenin en iyisini yapacağım!\n",
+    "createdAt": "2025-07-10T09:18:56.669Z"
   }
 ]

@@ -60,7 +60,7 @@ export default function Home() {
       variants={pageVariants}
       transition={pageTransition}
     >
-      <div className="min-h-screen bg-gradient-to-br from-[#111111] via-[#1a1a1a] to-[#111111]">
+      <div className="min-h-screen bg-dark-bg">
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
           {/* Welcome Section */}
           <motion.section
@@ -70,22 +70,21 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text hover-effect-target">
-              Proje Portalına Hoş Geldin
+              Welcome To DarkWeb
             </h1>
             <p className="text-lg text-dark-muted max-w-2xl mx-auto">
-              En popüler 0yun ve uygulamalara zahmetsizce ulaşabileceğin güvenli bir platform. Eğlence, üretkenlik, kişiselleştirme ve keşif için ihtiyacın olan her şey tek bir yerde. Güncel içerikler, kullanıcı dostu arayüz ile dijital deneyimini bir üst seviyeye taşı. 
-              
+              A secure platform for the most popular games and applications. Everything you need for fun, productivity, and discovery is in one place.
             </p>
             <div className="mt-6 flex items-center justify-center space-x-4">
               <Card id="total-projects-card" className="bg-dark-card data-hover-target">
                 <CardContent className="px-4 py-2">
-                  <span className="text-sm text-dark-muted">Toplam Proje:</span>
+                  <span className="text-sm text-dark-muted">Total Apps:</span>
                   <span className="text-accent-green font-semibold ml-2">{stats.totalProjects}</span>
                 </CardContent>
               </Card>
               <Card id="active-tools-card" className="bg-dark-card data-hover-target">
                 <CardContent className="px-4 py-2">
-                  <span className="text-sm text-dark-muted">Aktif Araçlar:</span>
+                  <span className="text-sm text-dark-muted">Active Apps:</span>
                   <span className="text-accent-blue font-semibold ml-2">{stats.activeTools}</span>
                 </CardContent>
               </Card>

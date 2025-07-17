@@ -142,10 +142,10 @@ const MouseTrail: React.FC = () => {
       ? 'transparent' // Kartın üzerindeyken içi boş olsun
       : (cursorState.isHoveringBigText ? 'rgba(255, 255, 255, 0.9)' : 
          cursorState.isHoveringSemihTopak || cursorState.isHoveringNavbarItem ? 'rgba(255, 255, 255, 0.9)' : 'transparent'),
-    borderColor: cursorState.isHoveringCard ? (cursorState.isHoveringFaintGreenCard ? `rgba(var(--accent-green-rgb), 0.3)` : `rgba(var(--accent-green-rgb), 0.7)`) : (cursorState.isHoveringBigText ? 'transparent' : 
+    borderColor: cursorState.isHoveringCard ? (cursorState.isHoveringFaintGreenCard ? `rgba(255, 255, 255, 0.3)` : `rgba(255, 255, 255, 0.7)`) : (cursorState.isHoveringBigText ? 'transparent' : 
          cursorState.isHoveringSemihTopak || cursorState.isHoveringNavbarItem ? 'transparent' : 'rgba(255, 255, 255, 0.7)'),
     boxShadow: cursorState.isHoveringCard 
-      ? (cursorState.isHoveringFaintGreenCard ? 'none' : `0 0 30px rgba(var(--accent-green-rgb), 0.7), 0 0 60px rgba(var(--accent-green-rgb), 0.5)`) 
+      ? (cursorState.isHoveringFaintGreenCard ? 'none' : `0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5)`) 
       : (cursorState.isHoveringBigText ? '0 0 20px rgba(255, 255, 255, 0.5)' : 
          cursorState.isHoveringSemihTopak || cursorState.isHoveringNavbarItem ? `0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.6)` : '0 0 5px rgba(255, 255, 255, 0.3)'),
     mixBlendMode: cursorState.isHoveringBigText || cursorState.isHoveringSemihTopak || cursorState.isHoveringNavbarItem ? 'difference' : 'normal',

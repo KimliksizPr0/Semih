@@ -25,58 +25,40 @@
   --radius: 0.5rem;
   
   /* Custom dark theme colors */
-  --dark-bg: hsl(0, 0%, 6.7%);
-  --dark-card: hsl(0, 0%, 12.2%);
-  --dark-text: hsl(0, 0%, 87.8%);
-  --dark-muted: hsl(0, 0%, 69.4%);
-  --accent-green: hsl(142, 100%, 45%);
-  --accent-green-rgb: 0, 230, 83;
-  --accent-blue: hsl(207, 90%, 61%);
-  --accent-blue-rgb: 0, 153, 255;
+  --dark-bg: hsl(240, 5%, 5%); /* Even darker background */
+  --dark-card: hsl(240, 4%, 10%); /* Darker card background */
+  --dark-text: hsl(210, 20%, 98%); /* Slightly off-white for text */
+  --dark-muted: hsl(210, 3%, 40%); /* Darker muted text */
+  --accent-green: hsl(140, 100%, 50%); /* Neon green */
+  --accent-green-rgb: 0, 255, 0; /* RGB for neon green */
+  --accent-blue: hsl(200, 100%, 50%); /* Neon blue */
+  --accent-blue-rgb: 0, 191, 255; /* RGB for neon blue */
 }
 
 .dark {
-  --background: hsl(0, 0%, 6.7%);
-  --foreground: hsl(0, 0%, 87.8%);
-  --muted: hsl(0, 0%, 15.3%);
-  --muted-foreground: hsl(0, 0%, 64.9%);
-  --popover: hsl(0, 0%, 6.7%);
-  --popover-foreground: hsl(0, 0%, 87.8%);
-  --card: hsl(0, 0%, 12.2%);
-  --card-foreground: hsl(0, 0%, 87.8%);
-  --border: hsl(0, 0%, 21.6%);
-  --input: hsl(0, 0%, 21.6%);
-  --primary: hsl(142, 100%, 45%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 15.3%);
-  --secondary-foreground: hsl(0, 0%, 87.8%);
-  --accent: hsl(0, 0%, 15.3%);
-  --accent-foreground: hsl(0, 0%, 87.8%);
-  --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(0, 0%, 87.8%);
-  --ring: hsl(0, 0%, 83.9%);
+  --background: hsl(240, 5%, 5%);
+  --foreground: hsl(210, 20%, 98%);
+  --muted: hsl(240, 4%, 15%);
+  --muted-foreground: hsl(210, 3%, 40%);
+  --popover: hsl(240, 5%, 5%);
+  --popover-foreground: hsl(210, 20%, 98%);
+  --card: hsl(240, 4%, 10%);
+  --card-foreground: hsl(210, 20%, 98%);
+  --border: hsl(240, 4%, 20%);
+  --input: hsl(240, 4%, 20%);
+  --primary: hsl(140, 100%, 50%);
+  --primary-foreground: hsl(240, 5%, 95%);
+  --secondary: hsl(240, 4%, 15%);
+  --secondary-foreground: hsl(210, 20%, 98%);
+  --accent: hsl(240, 4%, 15%);
+  --accent-foreground: hsl(210, 20%, 98%);
+  --destructive: hsl(0, 80%, 50%);
+  --destructive-foreground: hsl(210, 20%, 98%);
+  --ring: hsl(140, 100%, 50%);
 }
 
 .light {
-  --background: hsl(210, 100%, 98%);
-  --foreground: hsl(222, 84%, 5%);
-  --muted: hsl(210, 40%, 96%);
-  --muted-foreground: hsl(215, 16%, 47%);
-  --popover: hsl(210, 100%, 98%);
-  --popover-foreground: hsl(222, 84%, 5%);
-  --card: hsl(210, 100%, 98%);
-  --card-foreground: hsl(222, 84%, 5%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(142, 76%, 36%);
-  --primary-foreground: hsl(355, 100%, 97%);
-  --secondary: hsl(210, 40%, 96%);
-  --secondary-foreground: hsl(222, 84%, 5%);
-  --accent: hsl(210, 40%, 96%);
-  --accent-foreground: hsl(222, 84%, 5%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(142, 76%, 36%);
+  /* Keep light theme as is, or adjust if needed */
 }
 
 @layer base {
@@ -85,13 +67,13 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground select-none;
   }
 }
 
 @layer utilities {
   .gradient-bg {
-    background: linear-gradient(135deg, #111111 0%, #1a1a1a 50%, #111111 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); /* Darker gradient */
   }
   
   .card-hover {
@@ -100,11 +82,11 @@
   
   .card-hover:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 231, 118, 0.15);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25); /* White glow */
   }
   
   .glow-effect {
-    box-shadow: 0 0 20px rgba(66, 165, 245, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* White glow */
   }
   
   .loading-spinner {
@@ -146,24 +128,24 @@
 
   .cursor-follower {
     position: fixed;
-    width: 24px; /* Bir tık büyütüldü */
-    height: 24px; /* Bir tık büyütüldü */
+    width: 20px; /* Slightly smaller */
+    height: 20px; /* Slightly smaller */
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.7); /* Beyaz kenarlık */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* White border */
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
     z-index: 9999;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White glow */
   }
 
   .cursor-follower.expanded-cursor {
-    width: 90px; /* Bir tık büyütüldü */
-    height: 90px; /* Bir tık büyütüldü */
-    background-color: rgba(255, 255, 255, 0.9); /* Beyaz dolgu */
+    width: 80px; /* Slightly smaller */
+    height: 80px; /* Slightly smaller */
+    background-color: rgba(255, 255, 255, 0.2); /* Translucent white fill */
     border-color: transparent;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5); /* Beyaz parlama */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5); /* Stronger white glow */
   }
 
   /* Custom Scrollbar */
@@ -177,12 +159,12 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--accent-green);
+    background: var(--accent-green); /* Neon green thumb */
     border-radius: 10px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-green);
+    background: var(--accent-green); /* Neon green thumb on hover */
   }
 
   /* Typing Indicator Dots */
@@ -227,7 +209,7 @@
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(0, 231, 118, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(0, 231, 118, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 231, 118, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); } /* White pulse */
+  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } /* White pulse */
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } /* White pulse */
 }
